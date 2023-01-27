@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react"
+import { getStarshipList } from "../../services/sw-api"
 
 const StarshipList = () => {
   const [starshipList, setStarshipList] = useState([])
 
-  
+  useEffect(() => {
+    const fetchStarshipList = async () => {
+      const starshipData = await getStarshipList()
+      setStarshipList(starshipData.results)
+    }
+    fetchStarshipList()
+  }, [])
 
   return (
     <>
-      <h3>Starship List:</h3>
       {starshipList.length ?
         <>
           {starshipList.map(starship =>
@@ -18,7 +24,7 @@ const StarshipList = () => {
         </>
         :
         <>
-          <h4>Loading Starships...</h4>
+          <h3>Loading Starships...</h3>
         </>
       }
     </>
