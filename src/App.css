@@ -37,6 +37,11 @@
   }
 }
 
+header {
+  color: white;
+  background-color: black;
+}
+
 p {
   margin: 8px;
 }
