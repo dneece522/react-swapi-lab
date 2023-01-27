@@ -2,6 +2,11 @@ import { useEffect, useState } from "react"
 import { getStarshipList } from "../../services/sw-api"
 import { Link } from "react-router-dom"
 
+const linkStyle = {
+  textDecoration: "none",
+  color: "white"
+}
+
 const StarshipList = () => {
   const [starshipList, setStarshipList] = useState([])
 
@@ -16,13 +21,18 @@ const StarshipList = () => {
   return (
     <>
       {starshipList.length ?
-        <>
+        <div id="starships">
           {starshipList.map(starship =>
-            <div key={starship.model}>
-              <Link to="/starship" state={{starship}}>{starship.name}</Link>
-            </div>
+            <Link 
+              to="/starship" 
+              key={starship.name} 
+              state={{starship}}
+              style={linkStyle}
+            >
+              <div className="starship">{starship.name}</div>
+            </Link>
           )}
-        </>
+        </div>
         :
         <>
           <h3>Loading Starships...</h3>

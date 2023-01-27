@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+p {
+  margin: 8px;
+}
+
+p:first-child {
+  margin-top: 15px;
+}
+
+.starship {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 200px;
+  background-color: darkgreen;
+  border-radius: 10px;
+}
+
+.details {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 250px;
+  color: white;
+  background-color: darkgreen;
+  border-radius: 10px;
+}
+
+#starships {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+#detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

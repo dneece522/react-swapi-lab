@@ -3,6 +3,12 @@ import { getDetails } from "../../services/sw-api"
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 
+const linkStyle = {
+  color: "white",
+  marginTop: "8px",
+  marginBottom: "15px"
+}
+
 const StarshipDetails = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
   const location = useLocation()
@@ -18,9 +24,13 @@ const StarshipDetails = () => {
   return (
     < >
       <h2>Starship Details</h2>
-      <h3>NAME: {starshipDetails.name}</h3>
-      <h3>MODEL: {starshipDetails.model}</h3>
-      <Link to="/starship-list"><button>Return</button></Link>
+      <div id="detail">
+        <div className="details">
+          <p>NAME: {starshipDetails.name}</p>
+          <p>MODEL: {starshipDetails.model}</p>
+          <Link style={linkStyle} to="/starship-list">RETURN</Link>
+        </div>
+      </div>
     </>
   )
 }
